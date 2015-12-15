@@ -26,14 +26,14 @@ $trainingconfig = $wpoEngine->getPostConfig();
     
         <div class="post-area single-blog">
             <?php  while(have_posts()): the_post(); ?>
-            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                <div class="entry-thumb">
-                    <?php get_template_part( 'templates/content/content', get_post_format() ); ?> 
-                </div>    
-
-            
-                    <div class="post-container">
+            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>> 
+                <div class="row">
+                    <div class="entry-thumb col-md-6">
+                        <?php get_template_part( 'templates/content/content', get_post_format() ); ?> 
+                    </div>  
+                    <div class="post-container col-md-6">
                         <header class="entry-header">
+                         
                         <?php if( training_wpo_theme_options('blog_show-title', true) ){ ?>   
                             <div class="entry-name">
                                 <h1 class="entry-title"> <?php the_title(); ?> </h1>
@@ -42,13 +42,7 @@ $trainingconfig = $wpoEngine->getPostConfig();
                             
                             <div class="entry-meta">
                                 <?php training_wpo_posted_on(); ?>
-                                <span class="meta-sep"> / </span>
-                                <?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
-                                <span class="comments-link"><?php comments_popup_link( esc_html__( 'Leave a comment', 'training' ), esc_html__( '1 Comment', 'training' ), esc_html__( '% Comments', 'training' ) ); ?></span>
-                               
-                                <?php endif; ?>
-
-                                <?php edit_post_link( esc_html__( 'Edit', 'training' ), '<span class="edit-link">', '</span>' ); ?>
+                                
                             </div><!-- .entry-meta -->
                         </header><!-- .entry-header -->
 
@@ -65,22 +59,11 @@ $trainingconfig = $wpoEngine->getPostConfig();
                         </div><!-- .entry-content -->
                         
                      </div>
+
     
                 <?php the_tags( '<footer class="entry-meta"><span class="tag-links"><span>'.esc_html__('Tags:', 'training').' </span>', ', ', '</span></footer>' ); ?>
-                <?php if( training_wpo_theme_options('show-share-post', true) ){ ?>
-                    <div class="post-share">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <h6><?php echo esc_html__( 'Share this Post!','training' ); ?></h6>
-                            </div>
-                            <div class="col-sm-8">
-                                <?php training_wpo_share_box(); ?>
-                            </div>
-                        </div>
-                    </div>
-                <?php } ?>
                     
-                
+                </div> <!-- END ROW -->
             </article>    
            <?php endwhile; ?>
         </div>

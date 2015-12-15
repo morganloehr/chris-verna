@@ -197,6 +197,7 @@ nav#wpo-mainnav.style-dark .navbar-nav > li > a {
     width: 70%;
 }
 
+/*BLOG CHANGES*/
 
 .breadcrumbs .breadcrumb-heading {
 	display: none;
@@ -208,4 +209,24 @@ nav#wpo-mainnav.style-dark .navbar-nav > li > a {
 
 .breadcrumbs {
 	min-height: 350px;
+}
+
+.single-blog {
+	max-width: 900px;
+	margin: 0 auto;
+	margin-top: 60px;
+	margin-bottom: 60px;
+}
+
+.single-blog .entry-title {
+	margin-top: 0;
+	line-height: 1;
+}
+
+.byline {
+	display: none;
+}
+
+.meta-sep {
+	display: none;
 }

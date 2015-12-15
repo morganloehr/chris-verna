@@ -136,7 +136,7 @@
 	        		<div class="row">
 	          		<?php get_sidebar( 'left' );  ?>
 			        <!-- MAIN CONTENT -->
-			        <div id="wpo-content" class="<?php echo esc_attr( $trainingconfig['main']['class'] ); ?>">
+			        <div id="wpo-content" class="col-xs-12">
 			            <div class="wpo-content">
 
 	<?php }  

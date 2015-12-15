@@ -1,0 +1,1207 @@
+.course-item{
+   margin-bottom: 30px;
+   float: left;
+   width: 100%;
+   background: $white;
+   .course-image{
+      position: relative;
+      overflow: hidden;
+      .ib-edu-course-price{
+         width: 100%;
+         position: absolute;
+         z-index: 1;
+         bottom: -30px;
+         left: 0;
+         margin-bottom: 0;
+         text-align: center;
+         background: $theme-color;
+         @include transition(all 0.35s);
+         @include opacity(0);
+         span{
+            display: block;
+            width: 100%;
+            padding: 0 25px;
+            color: $white;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-align: center;
+            line-height: 30px;
+         }
+      }
+   } 
+   &:hover{
+      .ib-edu-course-price{
+         @include opacity(1);
+         bottom: 0;
+      }
+   }
+   .course-rating{
+      color: $nocolor;
+      font-size: 0px!important;
+      display: inline-block;
+      float: right;
+      margin-top: 5px;
+      .number-vote{
+         display: block;
+         width: 100%;
+         margin-top: 10px;
+         line-height: 1;
+      }
+   }
+   .uicon{
+      @include size(19px, 19px);
+      line-height: 1;
+      margin-bottom: -5px;
+      margin-right: 10px;
+      display: inline-block;
+   }
+   .icon-lesson{
+      background: url('#{$image-theme-path}icon-lesson-small.png') no-repeat $nocolor;
+   }
+   .icon-duration{
+      background: url('#{$image-theme-path}icon-duration-small.png') no-repeat $nocolor;
+   }
+   .course-header{
+      border-top: none;
+      padding:  30px;
+      text-align: center;
+      @media(max-width: $screen-sm-max){
+         padding: 15px;
+      }
+      h4{
+         margin: 0;
+         padding: 0 0 12px;
+         font-size: 14px;
+         text-transform: uppercase;
+         font-weight: 700;
+      }
+   }
+    .author, .author a, .course-meta span{
+      color: #aaaaaa;
+      font-size: 12px;
+   }
+   .author a:hover{
+      color: $theme-color;
+   }
+   .course-inner{
+      float: left;
+      width: 100%;
+   }
+   .course-meta{
+      border-top: 2px solid #E5E5E5;
+      padding: 15px;
+      background: $white;
+      float: left;
+      width: 100%;
+      > div{
+         width: 50%;
+         display: inline-block;
+         float: left;
+      }
+      .left{
+         > span{
+            display: block;
+            margin-bottom: 2px;
+            &:last-child{
+               margin-bottom: 0;
+            }
+         }   
+      }
+      .right{
+
+      }
+   }
+   .description{
+        line-height: 1.875;
+   }
+   .readmore{
+      letter-spacing: 5px;
+      @include transition(all 0.35s);
+      margin-top: 15px;
+      &:hover{
+         color: $black;
+      }
+   }
+   &.style-absolute{
+      position: relative; 
+      .course-inner{
+         border: none;
+         position: absolute;
+         top: 0;
+         left: 0;
+         @include size(100%, 100%);
+         z-index: 9;
+         background: rgba(0, 0, 0,.4)!important;
+      }
+      .meta{
+         background: $theme-color-rgba;
+         @include opacity(0);
+         @include scale(0);
+         @include transition(all 0.35s);
+         position: absolute;
+         top: 0;
+         left: 0;
+         @include size(100%, 100%);
+         z-index: 99;
+         color: $white;
+         text-align: center;
+         padding: 20px 20px 0;
+         h4 a{
+            color: $white;
+            font-size: 16px;
+            font-weight: 400;
+            text-transform: uppercase;
+            &:hover{
+               color: $black;
+            }
+         }
+         .ib-edu-course-price{
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 700;
+            margin-top: 20px;
+         }
+      }
+      .course-header{
+         @include transition(all 0.35s);
+         background: none;
+         position: absolute;
+         top: 50%;
+         left: 0;
+         width: 100%; 
+         margin-top: -40px;
+         z-index: 99;
+         padding: 0 20px;
+         h4{
+            height: 65px;
+            padding-top: 32px;
+            background: url("#{$image-theme-skin}bg-title.png") no-repeat center center!important;
+            a{
+               color: $white;
+               font-size: 18px;
+               font-weight: 400;
+               text-transform: uppercase;
+               &:hover{
+                  color: $theme-color;
+               } 
+            }
+         }   
+      }
+      &:hover{
+         .course-header{
+            @include opacity(0);
+            @include scale(0);
+         }
+         .meta{
+            @include opacity(1);
+            @include scale(1);
+         }
+      }
+   }
+}
+
+
+//Widget educator odds
+.wpo-educator-odds{
+   .readmore, .description{
+      display: none!important;
+   }
+   .item-small{
+      h4{
+         font-size: 14px;
+      }
+
+      .course-header{
+         padding: 50px 15px 30px!important;
+      }
+   }
+}
+
+
+//Widget educator carousel
+.wpo-educator-carousel{
+   .readmore, .description{
+      display: none!important;
+   }
+}
+
+.wpo-educator-searchform{
+   .form-inner{
+      width: 80%;
+      width: calc(100% - 160px);
+      width: -ms-calc(100% - 160px);
+      width: -moz-calc(100% - 160px);
+      width: -webkit-calc(100% - 160px);
+
+      float: left;
+      @media(max-width: $screen-sm-max){
+         width: 100%;
+      }
+      > *{
+         margin-left: 10px;
+         font-size: 14px;
+         text-transform: uppercase;
+      }
+      @media(max-width: $screen-xs-max){
+         > *{
+            margin: 0 0 15px;
+         }
+      }
+   }
+
+   .list-category{
+      border: 2px solid $border-color;
+      @include border-radius(40px);
+      padding: 12px 20px;
+      width: 25%;
+   }
+   .select2{
+      @include border-radius(40px);
+      border: 2px solid $border-color !important;
+      .selection span{
+         background: none!important;
+         color: $black!important;
+         border: none!important;
+         height: 43px;
+         line-height: 43px;
+      }
+      .select2-selection__arrow > b{
+         border-color: #000 transparent transparent !important;
+      }
+      &.select2-container--open{
+        .select2-selection__arrow > b{
+            border-color: transparent transparent #000 !important;
+         } 
+      }
+   }   
+   .input_search{
+      border: 2px solid $border-color;
+      @include border-radius(40px);
+       padding: 12px 20px;
+       width: 45%;
+       @media(max-width: $screen-xs-max){
+         width: 100%;
+       }
+      &::-webkit-input-placeholder {
+         color: $black; @include opacity(1);
+      }
+      &:-moz-placeholder { 
+         color: $black;  @include opacity(1);
+      }
+      &::-moz-placeholder {
+         color: $black;  @include opacity(1);
+      }
+      &:-ms-input-placeholder {  
+         color: $black;  @include opacity(1);
+      }
+   }
+   .search-label{
+      border: none!important;
+      float: left;
+      width: 150px;
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: 700;
+   }
+   .wpo-search-submit{
+      padding: 12px 0!important;
+      width: 20%;
+      text-align: center;
+      @media(max-width: $screen-md-max){
+         width: 19%;
+      }
+      @media(max-width: $screen-xs-max){
+         width: auto;
+         padding: 10px 25px!important;
+      } 
+   }
+   &.light-style{
+      .select2{
+         .selection span{
+            color: $white!important;
+            padding: 0 12px;
+            text-align: left;
+         }
+         .select2-selection__arrow > b{
+         border-color: #fff transparent transparent !important;
+         }
+         &.select2-container--open{
+           .select2-selection__arrow > b{
+               border-color: transparent transparent #fff !important;
+            } 
+         }
+      }
+      .form-inner{
+         > *{
+            border: 2px solid $white!important;
+            background: none!important;
+         }
+         option{
+            color: $black;
+         }
+      }
+      .search-label{
+         border: none!important;
+      }
+      .wpo-search-submit{
+         background: $white!important;
+         @include transition(all 0.35s);
+         &:hover{
+            background: none!important;
+         }
+      }
+      .input_search{
+         &::-webkit-input-placeholder {
+            color: $white; 
+         }
+         &:-moz-placeholder { 
+            color: $white;  
+         }
+         &::-moz-placeholder {
+            color: $white;
+         }
+         &:-ms-input-placeholder {  
+            color: $white;
+         }
+      }
+   }
+   &.vertical-style{
+      .form-inner{
+         padding: 30px 60px;
+         @media(max-width: $screen-sm-max){
+            padding: 30px 30px;
+         }
+         .select2{
+            padding: 0 10px;
+            width: auto!important;
+         }
+         >*{
+            width: 100%;
+            display: block;
+            @include rtl-text-align-left();
+            margin: 10px 0 0;
+            &.wpo-search-submit{
+               text-align: center;
+               background: $theme-color;
+               color: $white;
+               @include transition(all 0.35s);
+               border: 2px solid $theme-color!important;
+               &:hover{
+                  color: $theme-color;
+                  background: $white;
+               }
+            }
+         }
+      }
+      &.light{
+         .input_search{
+            background: $nocolor!important;
+            border: 2px solid $white!important;
+            color: $white;
+            &::-webkit-input-placeholder {
+               color: $white; 
+            }
+            &:-moz-placeholder { 
+               color: $white;  
+            }
+            &::-moz-placeholder {
+               color: $white;
+            }
+            &:-ms-input-placeholder {  
+               color: $white;
+            }
+         }
+         .select2 {
+            border: 2px solid $white!important;
+            .selection span{
+               color: $white!important;
+            }
+            .select2-selection__arrow > b{
+               border-color: #fff transparent transparent !important;
+            }
+            &.select2-container--open{
+               .select2-selection__arrow > b{
+                  border-color: transparent transparent #fff !important;
+               } 
+            }
+         }
+      }
+   }
+}
+
+//PAGE
+.single.single-ib_educator_course{
+   .course-thumbnail{
+      position: relative;
+   }
+   .course-title{
+      font-size: 24px;
+      font-weight: 700;
+   }
+   .ib-edu-lessons{
+      .ib-edu-lesson{
+         position: relative;
+         border: 1px solid #E1E1E1;
+         border-left: 5px solid #222222;
+         float: left;
+         width: 100%;
+         padding: 10px 30px 10px 80px;
+         margin-bottom: 3px;
+         .lesson-heading{
+            font-size: 14px;
+            font-weight: 400;
+            color: #222222;
+            float: left;
+            width: 80%;
+            width: calc(100% - 150px);
+            width: -ms-calc(100% - 150px);
+            width: -moz-calc(100% - 150px);
+            width: -webkit-calc(100% - 150px);
+            padding-right: 10px;
+            .number{
+               color: $theme-color;
+               display: inline-block;
+               width: 50px;
+               height: 100%;
+               line-height: 50px;
+               text-align: center;
+               position: absolute;
+               left: 0;
+               top: 0;
+               text-align: center;
+               border-right: 1px solid #E1E1E1;
+            }
+         }
+         .duration{
+            float: right;
+            color: #aaaaaa;
+            font-size: 12px;
+            font-weight: 400;
+            padding-top: 5px;
+         }
+         i{
+            font-style: normal;
+            margin-left: 10px;
+         }
+      }
+      .less-content{
+         position: relative;
+         float: left;
+         width: 100%;
+         &.content-hidden{
+            height: 250px;
+            overflow: hidden;
+            &:after{
+               content: "";
+               position: absolute;
+               @include size(100%, 100px);
+               bottom: 0;
+               left: 0;
+               z-index: 9;
+               background: linear-gradient(to bottom, transparent 0px, $white 100%) repeat scroll 0 0 transparent;
+               background: -webkit-linear-gradient(to bottom, transparent 0px, $white 100%) repeat scroll 0 0 transparent;
+               background: -o-linear-gradient(to bottom, transparent 0px, $white 100%) repeat scroll 0 0 transparent;
+               background: -moz-linear-gradient(to bottom, transparent 0px, $white 100%) repeat scroll 0 0 transparent;
+            }
+         }
+         &.content-open{
+            height: auto;
+            &:after{
+               content: none;
+            }
+         }
+      }   
+      .btn-view-lesson{
+         text-align: center;
+         margin-top: 15px;
+         width: 100%;
+         float: left;
+         a{
+            font-size: 12px;
+            color: $theme-color;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            &:hover{
+               cursor: pointer;
+               color: $black;
+            }
+         }
+      }
+   }
+   .course-features{
+      .widget-content > div{
+         line-height: 1.6;
+         .icon{
+            @include size(48px, 48px);
+            color: $theme-color;
+            background: #F8F8F8;
+            text-align: center;
+            line-height: 48px;
+            float: left;
+            margin-right: 20px;
+         }
+      }
+   }
+   
+   .course-students{
+      .widget-content{
+         .row{
+            margin-left: -5px!important;
+            margin-right: -5px!important;
+         }
+         .student-item{
+            @include size(33.33%, auto);
+            float: left;
+            padding: 5px;
+            img{
+               width: 100%;
+               height: auto;
+            }
+         }
+      }
+   }
+   .course-information-inner{
+      background: #222222;
+      padding: 30px;
+      p{
+         line-height: 1.3;
+         margin-bottom: 5px;
+      }
+      .ib-edu-button{
+         font-weight: 400;
+         letter-spacing: 5px;
+         font-size: 12px;
+      }
+   }
+   .category{
+      a{
+         color: #aaaaaa;
+         font-size: 12px;
+      }
+   }
+   .course-title{
+      font-family: $font-family-base;
+      font-size: 18px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: $white;
+   }
+   ul.list{
+      list-style: none;
+      padding: 0;
+      li{
+         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+         padding: 14px 0 20px;
+         line-height: 1;
+         color: #666666;
+         font-size: 12px;
+         text-transform: uppercase;
+      }
+      .val{
+         color: $white;
+      }
+   }
+   .uicon{
+      @include size(28px, 28px);
+      line-height: 1;
+      margin-bottom: -8px;
+      margin-right: 10px;
+      display: inline-block;
+   }
+   .icon-price{
+      background: url('#{$image-theme-path}icon-price.png') no-repeat $nocolor;
+   }
+   .icon-lesson{
+      background: url('#{$image-theme-path}icon-lesson.png') no-repeat $nocolor;
+   }
+   .icon-certificates{
+      background: url('#{$image-theme-path}icon-certificates.png') no-repeat $nocolor;
+   }
+   .icon-duration{
+      background: url('#{$image-theme-path}icon-duration.png') no-repeat $nocolor;
+   }
+   .icon-students{
+      background: url('#{$image-theme-path}icon-students.png') no-repeat $nocolor;
+   }
+   .course-teacher-information{
+      margin-top: 30px;
+      text-align: center;
+      .teacher-header{
+         > div{
+            &.teacher-thumbnail{
+               background: #F8F8F8;
+               text-align: center;
+               margin-bottom: 20px;
+               img{
+                  width: 100%;
+                  height: auto;
+               }
+            }
+            .teacher-body{
+
+            }
+            &.teacher-info{
+              text-align: center;
+               .teacher-name{
+                  margin-top: 0;
+                  font-size: 14px; 
+                  text-transform: uppercase;
+               }
+               .teacher-position{
+                  font-size: 12px;
+                  color: #bbbbbb;
+               }
+            }
+         }
+      }
+   }
+}
+
+
+//Single Teacher
+//-----------------------------------------------------------------
+.single.single-teacher{
+   .teacher-heading{
+      background: url('#{$image-theme-path}bg-teacher-heading.jpg') no-repeat $nocolor;
+      .entry-thumb{
+         @include border-radius(50%);
+         overflow: hidden;
+         display: inline-block;
+         @include size(200px, 200px);
+      }
+   }
+   .teacher-information{
+      border: 1px solid $border-color;
+      padding: 30px;
+      ul{
+         padding: 0;
+         list-style: none;
+         font-family: $font-family-base;
+         font-size: 12px;
+         li{
+            border-bottom: 1px solid $border-color;
+            padding: 10px 0;
+            margin: 0;
+            text-transform: uppercase;
+            &:last-child{
+               border: none;
+            }
+            &.rating{
+               margin-top: 10px;
+               .post-ratings{
+                  color: $nocolor!important;
+                  font-size: 0!important;
+               }
+               .number-vote{
+                  display: none;
+               }
+            }
+         }
+         .lab{
+            min-width: 120px;
+            color: #555555;
+            display: inline-block;
+         }
+         .val{
+            color: $black;
+         }
+      }
+   }
+   .skills-wrapper{
+      border: 1px solid $border-color;
+      border-left: none;
+      width: 100%;
+      float: left;
+      .skills-inner{
+         padding: 15% 55px 0 25px;
+         @media(max-width: $screen-sm-max){
+            padding: 15px 20px 0 20px;
+         }
+      }
+   }
+
+   .teacher-education{
+      .posts-timeline{
+         padding-top: 45px;
+         &:before{
+            background: #F1F1F1;
+         }
+         .entry-timeline{
+            width: 100%;
+            .hentry{
+               width: 50%;
+            }
+         }
+         .node{
+            @include size(45px, 45px);
+            @include border-radius(50%);
+            border: 2px solid #F1F1F1;
+            background: $white;
+            position: absolute;
+            top: 10px;
+            &:after{
+               content: "";
+               @include size(16px, 16px);
+               background: $theme-color;
+               @include border-radius(50%);
+               position: absolute;
+               top: 50%;
+               left: 50%;
+               margin: -8px 0 0 -8px;   
+            }
+         }
+         .entry-created{
+            top: 15px;
+            width: 100%;
+            background: none;
+            padding-top: 0!important;
+            span{
+               font-size: 12px;
+               font-family: $font-family-base;
+               font-weight: 400;
+               display: inline-block;
+               padding: 5px 15px;
+               &:after, &:before{
+                  content: none;
+               }
+            }   
+            &:after, &:before{
+               content: none;
+            }
+         }
+         > li{
+            margin: 0;
+            padding: 15px 0 0!important;
+            h4{
+               font-size: 14px;
+               text-transform: uppercase;
+            }
+            h5{
+               font-weight: 400;
+               color: $theme-color;
+            }
+            &:nth-child(2n){
+               .node{
+                  right: -22.5px;
+               }
+               .entry-created{ 
+                  left: 100%;
+                  left: calc(100% + 35px);
+                  left: -webkit-calc(100% + 35px);
+                  left: -moz-calc(100% + 35px);
+                  left: -ms-calc(100% + 35px);
+                  right: auto;
+                  text-align: left;
+               }
+               .hentry{
+                  padding-right: 60px;
+                  float: left;
+                  text-align: right;
+               }
+            }
+            &:nth-child(2n+1){
+               .node{
+                  left: -22.5px;
+               }
+               .entry-created{
+                  left: 100%;
+                  right: calc(100% + 35px);
+                  left: -webkit-calc(100% + 35px);
+                  left: -moz-calc(100% + 35px);
+                  left: -ms-calc(100% + 35px);
+                  left: auto;
+                  text-align: right;
+               }
+               .hentry{
+                  padding-left: 60px;
+                  float: right;
+                  text-align: left;
+               }
+            }   
+         }
+      }
+   }
+   .teacher-image{
+      background: #F8F8F8;
+   }
+}   
+
+//Item teacher 
+//-----------------------------------------------------------------------
+.horizontal-v2{
+   .post-teacher{
+      border-bottom: 1px solid $border-color;
+   }
+}
+
+.post-teacher{
+   .teacher-name{
+      font-size: 18px;
+      font-weight: 700;
+      a{
+         @include transition(all 0.35s);
+      }
+   }
+   .teacher-position{
+      font-size: 12px;
+      color: #bbbbbb;
+   }
+   .teacher-info{
+      line-height: 28px;
+      color: #666666;
+   } 
+}
+
+.single-ib_educator_lesson{
+   .wpo-breadcrumbs-inner{
+      margin-bottom: 0!important;
+   }
+   .lesson-single-content{
+      overflow: hidden;
+   }
+   .back-to-course{
+      background: #1E3148;
+      padding: 15px 30px;
+      color: $white;
+      text-transform: uppercase;
+      a{
+         color: $white;
+      }
+   }
+   .wpo-list-lesson{
+      width: 300px;
+      float: left;
+      background: #2A3F58;
+      position: relative;
+      @media(max-width: $screen-sm-max){
+         display: none;
+      }
+      &:after{
+         position: absolute;
+         content: "";
+         width: 100%;
+         height: 5000px;
+         background: #2A3F58;
+         top: 100%;
+         left: 0;
+      }
+      .lesson{
+         padding: 15px 20px;
+         float: left;
+         width: 100%;
+         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+         position: relative;
+         &:after{
+            content: "";
+            top: 0;
+            left: 1px;
+            @include size(4px, 100%);
+            background: $theme-color;
+            position: absolute;
+            z-index: 1;
+            @include opacity(0);
+         }
+         &.active{
+            &:after{
+               @include opacity(1);
+            }
+         } 
+         .title{
+            font-size: 14px;
+            color: $white;
+            display: block;
+            width: calc(100% - 55px);
+            float: right;
+            line-height: 1.6;
+            font-weight: 400;
+         }
+         .lesson-icon{
+            float: right;
+            color: #aaaaaa;
+         }
+         .duration{
+            color: #aaaaaa;
+            font-size: 12px;
+         }
+         .number{
+            margin-top: 5px;
+            float: left;
+            display: inline-block;
+            text-align: center;
+            line-height: 20px;
+            text-align: center;
+            @include size(25px, 25px);
+            border: 2px solid $theme-color;
+            color: $theme-color;
+            @include border-radius(50%);
+            font-size: 14px;
+            font-weight: 700;
+         }
+         &:hover{
+            background: #1E3148;
+            &:after{
+               @include opacity(1);
+            }
+         }
+      }
+   }
+
+   .wpo-lesson-content{
+      padding-left: 300px;
+      @media(max-width: $screen-sm-max){
+         padding-left: 0;
+      }
+      .content-inner{
+         padding: 20px;
+         background: #222222;
+         color: #ffffff;
+         *{
+            color: #ffffff;
+         }
+         a{
+            color: $theme-color;
+         }
+         .lesson-title{
+            font-size: 30px;
+         }
+         .content-lesson{
+            margin: 0 auto;
+            max-width: 960px;
+            padding: 35px 0;
+         }   
+      }
+   }
+
+   .lesson-comment{
+      .comment-inner{
+         margin: 0 auto;
+         max-width: 960px;
+      }
+   }
+   .comments{
+      color: #555555!important;
+   }
+}
+
+//--- Teacher Grid ---
+.wpo-teacher-grid{
+   &.normal{
+      .team-header{
+         background: #F8F8F8;
+      }
+      .team-job{
+         font-size: 12px;
+         color: $theme-color;
+         a{
+            color: $theme-color;
+            &:hover{
+               color: $theme-color;
+            }
+         }
+      }
+   }
+   &.vertical{
+      .team-item{
+         position: relative;
+         .team-body{
+            background: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            @include size(100%, 100%);
+            padding: 30px;
+            top: 0;
+            left: 0;
+            @include scale(0);
+            @include opacity(0);
+            @include transition(all 0.35s);
+            .team-body-content{
+               padding: 0 30px;
+               position: absolute;
+                @include size(100%, auto);
+                top: 50%;
+               left: 0;
+               margin-top: -130px;
+            }
+            .team-name{
+               a{
+                  font-size: 14px;
+                  text-transform: uppercase;
+                  font-weight: 700;
+                  &:hover{
+                     color: $theme-color;
+                  }
+               }
+            }
+            .team-job{
+               color: $theme-color;
+               font-size: 12px;
+               font-weight: 400;
+            }
+         }
+         &:hover{
+            .team-body{
+               @include scale(1);
+               @include opacity(1);
+            }   
+         }
+      }   
+   }
+   &.vertical-2{
+      .team-item{
+         .team-body{
+            min-height: 220px;
+            @media(max-width: $screen-sm-max){
+               min-height: 50px;
+            }
+            overflow: hidden;
+            .team-name{
+               margin: 0;
+               a{
+                  font-size: 14px;
+                  text-transform: uppercase;
+                  &:hover{
+                     color: $black;
+                  }
+               }
+            }
+            .team-job{
+               font-size: 12px;
+               color: $black;
+            }
+            .bo-social-icons > a{
+               background: none;
+               padding: 0;
+               margin-right: 25px; 
+               width: auto;
+               line-height: 1;
+               font-size: 18px;
+               i{
+                   color: #cccccc!important;
+               }
+               &:last-child{
+                  margin-right: 0;
+               }
+               &:hover i{
+                  color: $black!important;
+               }
+            }
+         }
+         .image{
+            height: 370px;
+            background: $white;
+            margin-top: 0;
+            img{
+               height: 100%;
+               width: auto;
+            }
+         }
+      }
+   }
+   &.carousel{
+      .widget-content{
+         background: #F8F8F8;
+         padding: 30px;
+         .team-header {
+            img{
+               @include size(100px, 100px);
+               @include border-radius(50%);
+            }
+         }
+         .job{
+            color: #bbbbbb;
+            font-size: 12px;
+            text-transform: none;
+            a{
+               color: #bbbbbb;
+            }
+         }
+         .teacher-info{
+            font-size: 16px;
+            color: #555555;
+         }
+         .read-more{
+            text-align: center;
+            margin-top: 15px;
+            a{
+               color: $theme-color;
+               font-size: 12px;
+               text-transform: uppercase;
+               font-weight: 700;
+               &:hover{
+                  color: $black;
+               }
+            }
+         }
+      }
+   }
+}
+
+// --- Category Courses Filter---
+.wpo-category-courses-filter{
+   background: #F4F4F4;
+   padding: 40px 30px;
+   .owl-control{
+      position: absolute;
+      top: -80px;
+      right: 0;
+      .carousel-control{
+         display: block!important;
+         &.left{
+            right: 36px;
+            left: auto;
+         }
+      }
+   }
+   .owl-item{
+      padding-left: 5px;
+      padding-right: 5px;
+      .category-item{
+         text-align: center;
+         min-height: 165px;
+         background: $white;
+         margin-bottom: 10px;
+         @include transition(background 0.35s);
+         .image{
+            display: block;
+            text-align: center;
+            margin-bottom: 15px;
+            .icon{
+               font-size: 45px;
+               line-height: 1;
+               @include transition(color 0.35s);
+            }
+         }
+         .title{
+            font-size: 12px;
+         }
+         &:last-child{
+            margin-bottom: 0;
+         }
+         &:hover{
+            background: $theme-color;
+            .icon{
+               color: $white!important;
+            }
+            .title{
+               color: $white;
+            }
+         }
+      }
+   }
+}
+
+/* Page payment information */
+.edu-payment-info{
+   .edu-payment-summary{
+      .payment-total{
+         width: 175px;
+         float: left;
+      }
+   }
+} 
+
+.ib-edu-form-field{
+   > label{
+      max-width: 175px!important;
+   }
+}

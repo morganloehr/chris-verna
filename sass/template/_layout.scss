@@ -1,0 +1,596 @@
+/*------------------------------------*\
+    Topbar
+\*------------------------------------*/
+.#{$app-prefix}-topbar{
+    position: relative;
+    ul{
+        @include clear-list();
+    }
+    .topbar-inner{  
+        padding: 10px 0;
+        float: left;
+        width: 100%;
+        color: $white;
+        font-size: 14px;
+        .dropdown-menu{
+            min-width: 250px;
+            right: 0;
+            left: auto;
+            li{ 
+                padding: 10px 30px;
+                border-bottom: 1px solid $border-color;
+                &:last-child{
+                    border-bottom: none;
+                }
+                a{
+                    color: $black;
+                    font-size: 13px;
+                    font-weight: 400;
+                    font-family: $font-family-second; 
+                    &:hover{
+                        color: $theme-color;
+                    }
+                }
+            }
+        }
+        .wpo-user-login{
+            font-size: 13px;
+            text-transform: none;
+            color: $white!important;
+        }
+    }
+    .btn{
+        padding: 5px 10px!important;
+    }
+    .topbar-mobile{
+        background: #222222;
+        @include font-size(font-size, $topbar-font-size);
+        line-height: 40px;
+        color: $white;
+        position: relative;
+        z-index: 99999;
+        .cart-popup{
+            min-width: 300px;
+            .title{
+                font-size: 15px;
+                text-transform: uppercase;
+                margin: 0 0 20px;
+            }
+            .product_list_widget > li{
+                position: relative;
+                a.remove{
+                    position: absolute;
+                    top: 5px;
+                    right: -5px;
+                    line-height: 1;
+                }
+                img.wp-post-image{
+                    max-width: 80px;
+                }
+                a{
+                    font-weight: 400;
+                    font-size: 15px;
+                }
+            }
+        }
+        ul.list-action > li{
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 20px;
+        }
+    } 
+    &.topbar-light{
+        background:#FFFFFF;
+        border-bottom:solid 1px $border-color; 
+        a{
+            .fa{
+                color: #999999;
+            }
+            &:hover{
+                color: $theme-color;
+                .fa{
+                    color: $theme-color;
+                }
+            }
+        }
+    }
+    &.topbar-light-v1{
+        border-bottom: solid 1px $border-color;
+        .topbar-inner{
+            background: #FFFFFF;
+        }
+    }
+    &.topbar-dark{
+        background:#202020;
+        .topbar-inner{
+            a{
+                color: $topbar-link-color;
+                &:hover{
+                    color: $topbar-link-hover-color;
+                }
+            }
+        }
+    } 
+    &.topbar-brown{
+        background: #3D2718;
+        a{
+            color: $topbar-link-color;
+            &:hover{
+                color: $topbar-link-hover-color;
+            }
+        }
+    }
+}
+.topbar-mobile{
+    position: relative;
+    z-index: 99999;
+    border-bottom: 1px solid $white;
+}        
+
+/*------------------------------------*\
+    Header
+\*------------------------------------*/
+.#{$app-prefix}-header{
+    margin-bottom: $header-margin-bottom;
+    background: $header-bg;
+    position: relative;
+    .header-wrapper{
+        padding-top: 0;
+        padding-bottom: 0;
+    } 
+    @media(max-width: $screen-sm-max){   
+    padding-bottom: 15px;   
+        .logo{
+            text-align: center;
+        }
+    }
+    .header-bottom{ 
+        padding: 15px 0;
+    }
+    .header-quick-action{
+        position: relative;
+        padding-right: 50px;
+        @media(max-width: $screen-md-max){
+           .logo-in-theme{
+                padding-top: 20px!important;
+            }
+        }
+        @media(max-width: $screen-sm-max){
+            padding-right: 15px;
+            .logo-in-theme{
+                padding: 0!important;
+            }
+        }
+        .box-quick-action{
+            position: absolute;
+            top: 50%;
+            @include rtl-right(15px);
+            z-index: 9;
+            margin-top: -20px;
+            width: auto;
+            > div{
+                display: inline-block;
+                float: left;
+               .minibasket{
+                height: 35px;
+                border-right: 1px solid $border-color;
+               }
+            }
+            .minibasket .cart-icon{
+                @include size(35px, 35px);
+                display: inline-block;
+                text-align: center;
+            }
+        }
+    }
+    .special-logo{
+        text-align: center;
+        .logo{
+            height: 140px;
+            margin-top: -61px;
+            padding-top: 25px;
+            background: $white;
+            text-align: center;
+            position: relative;
+            z-index: 99;
+            @media(max-width: $screen-md-max){
+                margin-top: -72px;
+            }
+            @media(max-width: $screen-sm-max){
+                margin-top: 0;
+                background: none;
+                display: inline-block;
+            }
+        }
+    }
+    .search_form{
+        &.no-bg{
+            .input-group-btn button{
+                background: none;
+            }
+        }
+        &.hidden-input{
+            .input-group{
+                display: inline-block;
+                > *{
+                    @include rtl-float-left(); 
+                }
+            }
+            .input-search{
+                @include box-shadow(inset 0 0 2px 2px rgba(0, 0, 0, 0.02));
+                width: 0;
+                padding: 0;
+                position: absolute;
+                right: 44px;
+                top: 0;
+                width: 0;
+                @include transition(all 0.35s);
+                height: 35px;
+                visibility: hidden;
+                &:focus{
+                    visibility: visible;
+                    width: 200px;
+                    padding: 0 10px;
+                }
+            }
+            .input-group-btn{
+                position: relative;
+                z-index: 99;
+                button{
+                    background: none;
+                    @include size(45px, 35px);
+                    @include border-radius(0!important);
+                    border: none;
+                    padding-right: 10px;
+                    margin-right: 3px;
+                    padding: 0;
+                    color: $white;
+                    @include transition(all 0.35s);
+                    i{
+                        font-size: 14px;
+                    }
+                }
+            }
+            &:hover,&.active{
+                .input-search{
+                    visibility: visible;
+                    width: 200px;
+                    padding: 0 10px;
+                }
+                .input-group-btn button{
+                    color: $white;
+                    background: $black;
+                }
+            }
+        } 
+        &.search-default .input-group{
+            border: 1px solid $border-color;
+            background: none;
+            input.input-search{
+                height: 35px;
+                border: none;
+                background: none;
+            }
+            .input-group-btn button{
+                padding: 6px 10px;
+                background: none;
+                color: $black;
+            }
+        }  
+    }
+    @media(max-width: $screen-sm-max){
+        #wpo-mainnav{
+            text-align: center;
+            #main-menu{
+                display: inline-block;
+            }
+        }    
+    }
+}
+
+##{$app-prefix}-header{
+    &.header-absolute{
+        position:absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 999;
+        @media(max-width: $screen-sm-max){
+            position: relative;
+            background: $theme-color; 
+            margin-top: 0!important;
+            #main-menu > li > a{
+                &:hover{
+                    color: $black!important;
+                }
+            }
+        }
+        
+        .header-quick-action{
+            padding: 0;
+        }
+        .logo-in-theme{
+            &:after{
+                content: none;
+            }
+        }
+        .input-group-btn button{
+            border-right-color: rgba(255, 255, 255, 0.6);
+            color: $white;
+        }  
+        .minibasket{
+            border: 0;
+            position: relative;
+            .cart-icon{
+                padding: 3px 0 0;
+            }
+            &:after{
+                content: "";
+                @include size(1px, 20px);
+                background: rgba(255, 255, 255, 0.6);
+                top: 8px;
+                left: 0;
+                z-index: 1;
+                position: absolute;
+            }
+            i{
+                color: $white;
+            }
+        }    
+        .box-quick-action{
+            position: static;
+            margin-top: 15px;
+            width: auto;
+            display: inline-block;
+        }
+    }
+    &.header-center{
+        text-align: center;
+        .mainmenu-content{
+            text-align: center;
+            #wpo-mainnav{
+                display: block;
+                padding: 0;
+                > *{
+                    display: inline-block;
+                    &.navbar-collapse{
+                        display: inline-block!important;
+                    }
+                }
+            }    
+        }    
+    }
+    .keeptop{
+        left: 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 9999;
+
+        .container-inner{ 
+            @include transition(all 0.35s);
+            background:$theme-color;
+        }
+        #main-menu{
+            > li{
+                padding: 20px 0;
+                > a:hover{
+                    color: $black;
+                }
+                &.active {
+                    > a{
+                        color: $black!important;
+                    }
+                }
+            }
+        }
+        #logo-inner{
+            padding: 0!important;
+            .logo{
+                padding: 10px 0!important;
+            }
+        }
+    }
+} 
+ 
+ .logged-in{
+    .header-absolute{
+        margin-top: 30px;
+    }
+ }
+ 
+ /* search action */
+ .has-searchbox-show{
+    position:relative;
+    .wpo-mainmenu-wrap, .logo-wrapper{
+        visibility: hidden;
+    }
+    .navbar-collapse{
+        display: none!important;
+    }
+    .search-box-form{
+        position: absolute;
+        top: 0;
+        width: 92%;
+        left: 0;
+    }
+    .search-box-button{ 
+        .fa-search{
+            display: none;
+        }
+        .fa-times{
+            display: block!important;
+        }
+    }    
+}
+ .showwhenclick{
+    .search-box-form{
+        display: none;
+         &.active{
+            display: block;
+        }
+    }
+ }
+
+/*------------------------------------*\
+    Breadcrumb
+\*------------------------------------*/
+.#{$app-prefix}-breadcrumb{
+    
+}
+
+/*------------------------------------*\
+    Slideshow
+\*------------------------------------*/
+.#{$app-prefix}-slideshow{
+
+}
+
+.#{$app-prefix}-mainmenu{
+    position: relative;
+    &.bg-transparent{
+        border-top: solid 1px #CCCCCC;
+    }
+    &.mainmenu-light{
+        background: #FFFFFF;
+    } 
+    &.mainmenu-border{
+        border-top: 1px solid $border-color;
+        #main-menu > li{
+            border-left: 1px solid $border-color;
+            > a{
+                border-left: none;
+                padding: 0 30px;
+            }
+        }
+    }
+}
+
+/*------------------------------------*\
+    Container
+\*------------------------------------*/
+.#{$app-prefix}-mainbody{
+    @include box-size($container-bg, $container-padding-top, $container-padding-bottom);
+    position: relative;
+}
+
+/*------------------------------------*\
+    Content
+\*------------------------------------*/ 
+##{$app-prefix}-content{
+    background: $content-bg;  
+    @include clearfix(); 
+} 
+
+/*------------------------------------*\
+    Pagination
+\*------------------------------------*/
+.#{$app-prefix}-pagination{
+    margin: 0;
+}
+
+/*------------------------------------*\
+    Footer 
+\*------------------------------------*/
+
+.#{$app-prefix}-footer{
+    @include box-size($footer-bg, $footer-padding-top, $footer-padding-bottom);
+    position: relative;
+    color: $footer-color;
+    border-bottom: $footer-border;
+    font-size: $footer-font-size;
+    width: 100%;
+    float: left;
+    ul li a{
+        font-size: $footer-link-font-size;
+        color: $footer-link-color;
+        font-weight: 400;
+        &:hover,
+        &:focus,
+        &:active{
+            color: $footer-link-hover-color;
+        }
+        &:before, &:after{
+            content: none!important;
+        }
+    }
+    ul.menu{
+        margin-top: -5px!important; 
+        > li{
+            margin-bottom: 16px;
+            a{
+                position: relative;
+                padding-left: 15px;
+                @include transition(all 0.35s);
+                &:after{
+                    font-family: "FontAwesome";
+                    content: "\f105";
+                    position: absolute;
+                    left: 0;
+                    top: 6px;
+                    margin-top: -5px;
+                    color: #dddddd;
+                    z-index: 1;
+                    font-size: 12px;
+                }    
+                &:hover{
+                }
+            }
+        }
+    }
+    ul > li {
+        margin: $footer-list-margin;
+    }
+    .footer-top{
+        .container{
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    }
+    .wpb_wrapper > *, .wpb-inner{
+        margin-bottom: 0;
+    }
+} 
+
+/*------------------------------------*\
+    Copyright
+\*------------------------------------*/
+.#{$app-prefix}-copyright{
+    text-align: center;
+    background: $copyright-bg;
+    color: $copyright-color;
+    font-size: $copyright-font-size;
+    font-weight: $copyright-font-weight;
+    float: left;
+    width: 100%;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    text-transform: none;
+    @include box-size($copyright-bg, $copyright-padding-top, $copyright-padding-bottom);
+    .#{$block-selector} {
+        .#{$block-heading-selector}{
+            color: $footer-heading-color;
+            text-transform: $footer-heading-transform;
+            margin: $footer-heading-margin;
+            @include font-size(font-size,$footer-heading-font-size);
+        }
+    }
+    .input-group{
+        border: 0px;
+        .fa{
+            color: $gray-light;
+        }
+    }
+    a{
+        color: $white;
+        &:hover,
+        &:focus,
+        &:active{
+            color: $theme-color;
+        }
+        color: $copyright-link-color;
+    }
+    address{ 
+        margin: 0;
+    }
+    .payment{
+        padding-top: 30px;
+    }
+}

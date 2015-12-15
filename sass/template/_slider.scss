@@ -1,0 +1,170 @@
+/*
+*  Revolution Slider
+*/
+
+.wpb_revslider_element{
+	overflow: hidden;
+	.tp-bullets
+	{
+		bottom: 40px;
+		&.simplebullets.round .bullet{
+			background-image: none;
+			background-color: $white;
+			border: none;
+			@include transition(all .5s ease-out);
+			@include box-shadow(none);
+			@include text-shadow(none);
+			@include square(12px);
+			@include border-radius(50%);
+			margin: 0 10px;
+			&.selected{
+				background: $theme-color;
+			}
+		}
+	}
+	.no-slides-text{
+		padding: 50px 0px;
+	}
+}
+
+.tp-caption{
+	&.text-large-white{
+		@include font-size(font-size, 80px);
+		color: $white;
+		font-family: $font-family-base;
+		font-weight: 800;
+		text-transform: uppercase;
+		line-height: 1!important;
+	}
+	&.text-large-black{
+		@include font-size(font-size, 80px);
+		color: $black;
+		font-family: $font-family-base;
+		font-weight: 800;
+		text-transform: uppercase;
+		line-height: 1!important;
+	}
+	span.color-theme{
+		color: $theme-color;
+	}
+	&.text-medium{
+		@include font-size(font-size, 18px);
+		color: #999999;
+		text-transform: uppercase;
+		font-weight: 800;
+		font-family: $font-family-base; 
+		letter-spacing: 8px;
+	}
+	&.text-small{
+		font-size: 24px!important;
+		color: #999999;
+		text-transform: none;
+		font-weight: 300;
+		font-style: italic;
+		font-family: $font-family-base;
+	}
+	&.text-white{
+		color: $white;
+	}
+	&.overlay{
+		display: block;
+		z-index: 1 !important;
+		text-indent: -9999px;
+		background: transparentize($black, .5);
+		@include size(960px, 227px);
+	}
+	&.font-big{
+		font-size: 80px;
+	}
+	&.font-big-2{
+		font-size: 70px;
+	}
+	&.font-large{
+		font-size: 48px;
+	}
+	&.font-medium-1{
+		font-size: 24px;
+	}
+	&.font-medium{
+		font-size: 36px;
+	}
+	&.font-small-1{
+		font-size: 18px;
+	}
+	&.font-small{
+		font-size: 14px;
+	}
+	&.color-white{
+		color: $white;
+	}
+	&.color-theme{
+		color: $theme-color;
+	}
+	&.color-black{
+		color: $black;
+	}
+	&.color-dark{
+		color: #999999;
+	}
+	&.color-dark-2{
+		color: #CCCCCC;
+	}
+	&.color-white-2{
+		color: #f4f4f4;
+	}
+	&.text-uppercase{
+		text-transform: uppercase;
+	}
+	&.text-spacing{
+		letter-spacing: 8px!important;
+	}
+	&.text-spacing-2{
+		letter-spacing: -4px;
+	}
+	&.text-spacing-3{
+		letter-spacing: 16px!important;
+	}
+	&.text-italic{
+		font-style: italic;
+	}
+}
+
+.tparrows{
+	&.default{
+		top: 46%;
+		color: $white;
+		background-image: none;
+		position: relative;
+		visibility: hidden;
+		background-color: rgba($black, 0.25);
+		@include opacity(0);
+		@include size(32px, 50px);
+		@include transition(all .5s ease-in);
+		&:before{
+			content: "\f105";
+			font-family: $theme-font-name;
+			margin: auto;
+			display: block;
+    		color: $white;
+    		font-weight: bold;
+    		@include font-size(font-size, 15px);
+    		@include vertical-center(4px, 25px);
+		}
+	}
+	&.tp-leftarrow{
+		@include rtl-margin-left(-52px);
+		&:before{
+			content: "\f104";
+		}
+	}
+	&.tp-rightarrow{
+		@include rtl-margin-right(-52px);
+	}
+	&:hover{
+		background-color: rgba($theme-color, .8);
+		&:before{
+			color: $white;
+		}
+	}
+	@include state-hover(.5s,50px, rgba($theme-color, .8));
+}

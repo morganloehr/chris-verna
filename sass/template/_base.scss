@@ -1,0 +1,104 @@
+// Base
+//---------------------------------
+*{
+   
+}
+@include selection($white,$theme-color);
+iframe{
+	border: none;
+}
+del{
+    @include font-size(font-size, $del-font-size);
+    color: 	$del-color;
+}
+a{
+    @include transition(color 0.35s);
+}
+img{
+    border: 0;
+    vertical-align: top;
+    max-width: 100%;
+    height: auto;
+}
+.video-responsive {
+    height: 0;
+    padding-top: 0;
+    padding-bottom: 56.25%;
+    margin-bottom : 0;
+    position: relative;
+    overflow: hidden;
+	embed,iframe,object,video{
+		top: 0;
+		left: 0;
+		position: absolute;
+        @include square(percentage(1));
+	}
+}
+ 
+.audio-responsive{
+	iframe{
+		@include size(percentage(1), 126px);
+	}
+}
+.owl-carousel-play{
+    margin-left: -($grid-gutter-width / 2);
+    margin-right: -($grid-gutter-width / 2);
+    .owl-carousel{
+        background: $nocolor;
+    }
+    .owl-wrapper-outer{
+        
+    }
+    position:relative; 
+    .owl-item {
+        padding-left:  ($grid-gutter-width / 2);
+        padding-right: ($grid-gutter-width / 2);
+    }
+    
+    .owl-theme .owl-controls .owl-page{
+        display: inline-block;
+        zoom: 1;
+        *display: inline;/*IE7 life-saver */
+    }
+    .owl-theme .owl-controls .owl-page span{
+        display: block;
+        @include size(10px, 10px);
+        margin: 5px 1px;
+        filter: Alpha(Opacity=50);/*IE7 fix*/
+        opacity: 0.5;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        border-radius: 20px;
+        background: #869791;
+    }
+
+    .owl-theme .owl-controls .owl-page.active span,
+    .owl-theme .owl-controls.clickable .owl-page:hover span{
+        filter: Alpha(Opacity=100);/*IE7 fix*/
+        opacity: 1;
+        background: $theme-color;
+    }
+}
+
+.nav-center{
+    display: inline;
+    text-align: center
+}
+.nopadding{
+    padding:0 !important;
+    margin:0!important;
+}
+// Google Map
+//---------------------------------
+.map_canvas{
+	img{
+		max-width: none;
+	}
+}
+
+.pagination {
+    span.page-numbers.current{
+        background: $theme-color;
+        color: $white;
+    }
+}

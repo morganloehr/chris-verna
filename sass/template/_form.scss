@@ -1,0 +1,19 @@
+.course-rating{
+   position: relative;
+   .post-ratings{
+      color: $nocolor;
+      margin-bottom: 5px;
+      font-size: 0;
+   }
+   .post-ratings-loading{
+      height: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: auto;
+      z-index: 1;
+      img{
+         margin: 0 5px;
+      }
+   }
+}   

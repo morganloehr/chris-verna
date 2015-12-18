@@ -1,5 +1,14 @@
 /*MOLO STYLE*/
 
+body {
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+p, address, li {
+	font-weight: 400;
+	font-size: 16px;
+}
+
 .logo {
 	margin: 0 auto;
 	max-width: 250px;
@@ -20,7 +29,7 @@
 	color: white;
 }
 
-.wpo-testimonial.v6.slide-single .testimonials-description {
+.wpo-testimonial.v6.slide-single .testimonials-description p{
 	margin-top: 60px;
 	font-size: 28px;
 }
@@ -28,6 +37,20 @@
 .wpo-testimonial.v6 .widget-content {
 	overflow: visible;
 }
+
+
+/*QUOTATION MARK*/
+/*.wpo-testimonial:after {
+	content:"";
+	background: url("../images/icon-testimonial.png");
+	position: absolute;
+    width: 49px;
+    height: 38px;
+    right: 76%;
+    bottom: 0;
+    top: 74%;
+
+}*/
 
 .owl-wrapper-outer .autoHeight {
 	height: auto !important;
@@ -99,12 +122,17 @@ width: 100%;
 	margin-top: 20px;
 }
 
+.hero .vc_icon_element {
+	margin-top: 10%;
+}
+
 /*.header-image img {
 	max-height: 600px;
 }*/
 
 .wpb_single_image img {
 	width: 100%;
+
 }
 
 
@@ -146,7 +174,7 @@ h5.testimonials-name {
 	line-height: 1.4em;
 }
 
-.feature-text {
+.feature-text p{
 	font-size: 30px;
 }
 
@@ -208,7 +236,8 @@ nav#wpo-mainnav.style-dark .navbar-nav > li > a {
 }
 
 .breadcrumbs {
-	min-height: 350px;
+	min-height: 250px;
+	padding-top: 200px;
 }
 
 .single-blog {
@@ -229,4 +258,254 @@ nav#wpo-mainnav.style-dark .navbar-nav > li > a {
 
 .meta-sep {
 	display: none;
+}
+/*
+.lite-gray-row {
+	background: #f8f8f8;
+}*/
+
+
+/*ATHlETES PAGE*/
+
+.bg-info {
+	background: #333 !important;
+}
+
+.wpb_singleimage_heading {
+	text-align: center;
+	font-size: 15px;
+	margin-top: 20px;
+	color: white;
+	position: relative;
+	margin-bottom:30px;
+}
+
+.wpb_singleimage_heading:after {
+	content:"";
+	position: absolute;
+	bottom: -20px;
+	border-bottom: 2px solid #ea4c23;
+	height: 2px;
+	width: 50%;
+	right: 0;	
+	left: 0;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
+
+.horizontal-v2 .post-teacher {
+	padding-top: 50px;
+}
+
+
+.feature-athlete {
+	text-align: center;
+}
+
+.feature-athlete p {
+	margin: 0;
+	color: white;
+}
+
+.feature-athlete p.diagnosis {
+	color: #bbbbbb;
+}
+
+.feature-athlete .wpb_single_image {
+	margin-bottom: 50px;
+}
+
+.underline h2:after {
+	content:"";
+	position: absolute;
+	bottom: -20px;
+	border-bottom: 2px solid #ea4c23;
+	height: 2px;
+	width: 40%;
+	right: 0;	
+	left: 0;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.select-athlete img {
+	border-radius: 50%;
+}
+
+/*PORTFOLIO */
+
+.ih-item.square.effect16 .info .info-inner {
+	width: 75%;
+  height: 50%;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+p.negative-marg-top {
+	margin-top: -40px;
+}
+
+.ih-item.square .info p {
+	color: white;
+}
+
+.ih-item.square.effect16 .info .info-inner a {
+	font-size: 16px;
+}
+
+.ih-item.square.effect16 .info .info-inner h3 a {
+	font-size: 20px;
+}
+
+
+/*SERVICES*/
+
+.services-section .wpb_singleimage_heading {
+  margin: auto;
+  position: absolute;
+  top: 40%; left: 0; bottom: 0; right: 0;
+  font-size: 18px;
+}
+
+.services-section .wpb_wrapper {
+	position:relative;
+}
+
+.services-section .wpb_singleimage_heading:after {
+	bottom: 0;
+	top: 30%;
+	border-bottom: #f8f8f8 solid 2px;
+}
+
+.service-square {
+	margin-top: -35px;
+}
+
+.service-square .wpb_wrapper {
+	background: #f8f8f8 ;
+	padding: 20px 30px 20px;
+	margin-bottom: 40px;
+}
+
+.service-square .wpb_wrapper .wpb_text_column {
+	margin-top: -30px;
+}
+
+.service-square .wpb_wrapper p, .service-square .wpb_wrapper h3 {
+	text-align: center;
+	position: relative;
+}
+
+.service-square .wpb_wrapper p,.service-square .wpb_wrapper li  {
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.service-square h3 {
+	margin-bottom: 40px;
+	font-size: 18px;
+	margin-top: 15px;
+}
+
+
+.service-square h3:after {
+	content:"";
+	position: absolute;
+	bottom: -20px;
+	border-bottom: 2px solid #999;
+	height: 2px;
+	width: 100%;
+	right: 0;	
+	left: 0;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/*BLOG CHANGES*/
+
+.post-info {
+	background: #fafafa;
+	padding:20px;
+}
+
+
+.post-info h3 {
+	position: relative;
+	margin-bottom: 30px;
+}
+
+.post-info h3:after{
+	content:"";
+	position: absolute;
+	bottom: -10px;
+	border-bottom: 2px solid #ea4c23;
+	height: 2px;
+	width: 10%;
+	left: 0
+}
+
+.post-default {
+	padding-left: 0;
+}
+
+
+.main-athletes .entry-content-inner {
+	display: none;
+}
+
+.main-athletes article.post {
+	height:140px;
+	border-radius: 50%;
+	border: 3px solid #ea4c23;
+}
+
+.main-athletes .entry-title {
+	text-align: center;
+}
+
+.main-athletes .entry-title a {
+	color: white;
+}
+
+.homepage-athlete .wpb_wrapper {
+	background: #fafafa;
+	text-align: center;
+}
+
+.homepage-athlete h3 {
+	margin-top: 0;
+}
+
+.homepage-athlete button, .homepage-athlete a {
+	margin-bottom: 30px !important;
+}
+
+.homepage-athlete .wpb_text_column {
+	padding: 0 20px;
+}
+
+
+.athlete-row .wpb_single_image img:hover{
+	opacity: .6;
+}
+
+.heading.heading-v1 .heading-inner h2, .heading.heading-v2 .heading-inner h2 {
+	margin-bottom: 20px;
+}
+
+.course-item.style-absolute .meta {
+	padding-top: 40px;
+}
+
+.footer-logo .logo {
+	max-width: 200px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.athlete-row .vc_gitem-is-link:hover,.athlete-row .vc_gitem-is-link, .athlete-row .vc_gitem-is-link a:hover  {
+	cursor: default;
 }

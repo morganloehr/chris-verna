@@ -84,6 +84,21 @@ if('page' == get_post_type()){
 	<div class="wpo-copyright">
 		<div class="container">
 			<div class="copyright">
+				<div class="footer-logo">
+						<?php if( training_wpo_theme_options('logo') ) { ?>
+									<div class="logo">
+										<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+											<img src="<?php echo esc_url_raw( training_wpo_theme_options('logo') ); ?>" alt="<?php bloginfo( 'name' ); ?>">
+										</a>
+									</div>
+									<?php } else { ?>
+									<div class="logo logo-theme">
+										<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+											<img src="<?php echo esc_url_raw( get_template_directory_uri() . '/images/logo-v3.png' ); ?>" alt="<?php bloginfo( 'name' ); ?>" />
+										</a>
+									</div>
+									<?php } ?>
+				</div>
 				<address>
 					<?php 
 						$copyright_text =  training_wpo_theme_options('copyright_text', '');

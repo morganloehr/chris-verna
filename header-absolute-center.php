@@ -29,6 +29,7 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php wp_head(); ?>
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/molo.css" media="all" />
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600' rel='stylesheet' type='text/css'>
 </head>
 
 <body <?php body_class(); ?>>

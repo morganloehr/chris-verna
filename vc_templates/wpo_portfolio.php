@@ -91,16 +91,15 @@ $loop = new WP_Query($args);
         <div class="wpo-portfolio-content text-center">
           <div class="ih-item square colored effect16">
               <div class="img">
-                  <?php if ( has_post_thumbnail()) {
+                 <a href="<?php the_permalink(); ?>"> <?php if ( has_post_thumbnail()) {
                     the_post_thumbnail($thumb);
-                  }?>
+                  }?></a>
               </div>
               <div class="info">
                 <div class="info-inner">
                     <h3><a class="text-white" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                    <p class="description"><?php echo training_wpo_excerpt(20,'...'); ?></p>
-                    <p class="created hidden"><?php echo get_the_date(); ?></p>
-                    <a class="hidden zoom" href="<?php echo esc_url($image_attributes[0]) ?>" data-rel="prettyPhoto[pp_gal]"> <i class="fa fa-search radius-x space-padding-10"></i> </a>
+                    <p class="description"> <?php the_excerpt(); ?></p>
+                    <p class="negative-marg-top"><a  href="<?php the_permalink(); ?>">  Read More <i class="fa fa-chevron-right radius-x space-padding-10"></i></a></p>
                 </div>    
               </div>
           </div>

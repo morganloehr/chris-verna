@@ -1,3 +1,4 @@
+
 <?php
 /**
  * $Desc
@@ -34,6 +35,8 @@ switch ($postformat) {
 $class = 'post-default post-masonry';
 if(is_single()) $class .= ' post-single'; else $class .= ' not-post-single';
 ?>
+
+
 <article id="post-<?php the_ID(); ?>" <?php post_class($class); ?>>
         <?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
           
@@ -41,22 +44,12 @@ if(is_single()) $class .= ' post-single'; else $class .= ' not-post-single';
         <div class="post-container clearfix">
             <div class="blog-post-detail">
                 <figure class="entry-thumb">
-                    <?php 
+                   <?php training_wpo_post_thumbnail(); ?>
+<!--                     <?php 
                         if( has_post_format($postformat)){ 
                             get_template_part( 'templates/content/content', $postformat );
                         }
-                    ?>
-                    <div class="post-meta-top">
-                        <div class="entry-created bg-success space-padding-top-10">
-                            <span class="month"><?php the_time( 'M' ); ?></span>
-                            <span class="date"><?php the_time('d'); ?></span>
-                        </div>
-                        <?php if(!empty($icon)){ ?>
-                            <div class="icon-post bg-darker color-white space-padding-top-20 text-center">
-                                <span class="space-padding-top-10 text-white fa <?php echo esc_attr($icon); ?>"></span>
-                            </div>    
-                        <?php } ?>
-                    </div>    
+                    ?>    -->
                 </figure>
                 <div class="entry-data">
                     <h3 class="entry-title">

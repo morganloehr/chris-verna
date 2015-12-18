@@ -11,19 +11,20 @@
   $post_category = trim($output, $separator);
   }      
 ?>
-<article class="post">
-    <?php
-    if ( has_post_thumbnail() ) {
-        ?>
-            <figure class="entry-thumb">
-                <a href="<?php the_permalink(); ?>" title="" class="entry-image zoom-2">
-                    <?php the_post_thumbnail( $thumbsize );?>
-                </a>
-            </figure>
-        <?php
-    }
-    ?>
-    <div class="entry-content">       
+
+<?php
+if (has_post_thumbnail()) {
+    $thumbnail_data = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'my-fun-size' );
+    $thumbnail_url = $thumbnail_data[0];
+}
+
+?>
+<article class="post" id="post-<?php the_ID(); ?>" style="background-image:url('<?php echo $thumbnail_url ?>'); background-size: cover" >
+
+
+   
+</article>
+ <div class="entry-content">       
         <div class="entry-content-inner clearfix">
             <div class="entry-meta">
                 <div class="left">
@@ -65,4 +66,3 @@
             ?>
         </div>    
     </div>
-</article>
